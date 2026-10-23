@@ -1,0 +1,11 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    ports:
+      - "127.0.0.1:6379:6379"
+    environment:
+      REDIS_ARGS: "--save 60 1"
+    volumes:
+      - falkordb-data:/var/lib/falkordb/data
+volumes:
+  falkordb-data:
